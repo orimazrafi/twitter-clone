@@ -1,0 +1,54 @@
+// .sidebar_wrapper {
+//   overflow-y: scroll;
+//   height: 100vh;
+// }
+.sidebar {
+  .link_wrapper {
+    display: flex;
+    margin: 5px 0;
+    .sidebar_link {
+      display: flex;
+      padding: 10px;
+      .activeSvg {
+        fill: rgba(29, 161, 242, 1);
+      }
+      &:hover {
+        text-decoration: none;
+        background: rgba(29, 161, 242, 0.1);
+        border-radius: 25px;
+        padding: 10px;
+        .svg {
+          fill: rgba(29, 161, 242, 1);
+        }
+        .label {
+          color: rgba(29, 161, 242, 1);
+        }
+      }
+      .label {
+        margin-left: 20px;
+        align-self: center;
+        color: black;
+        font-weight: bold;
+        font-size: 19px;
+      }
+      .active {
+        color: rgba(29, 161, 242, 1);
+      }
+    }
+  }
+  .tweet_btn {
+    background-color: rgb(29, 161, 242);
+    border-radius: 25px;
+    padding: 10px 110px;
+    color: white;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    margin-left: 15px;
+    &:hover {
+      cursor: pointer;
+      background-color: rgb(19, 117, 179);
+    }
+  }
+}
