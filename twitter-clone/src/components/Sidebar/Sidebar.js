@@ -187,7 +187,7 @@ export const Sidebar = ({ onTweetSubmit }) => {
                   data-focusable="true"
                   className={style.items_wrapper}
                 >
-                  <ImageAndEmail />
+                  <ImageAndEmail height="39" width="39" />
                   <div style={{ height: "20px", marginLeft: "75px" }}>
                     <svg viewBox="0 0 24 24" style={{ height: "20px" }}>
                       <path d="M20.207 8.147c-.39-.39-1.023-.39-1.414 0L12 14.94 5.207 8.147c-.39-.39-1.023-.39-1.414 0-.39.39-.39 1.023 0 1.414l7.5 7.5c.195.196.45.294.707.294s.512-.098.707-.293l7.5-7.5c.39-.39.39-1.022 0-1.413z"></path>
@@ -200,7 +200,7 @@ export const Sidebar = ({ onTweetSubmit }) => {
         }
         id="basic-nav-dropdown"
       >
-        <ImageAndEmail padding="15px" />
+        <ImageAndEmail padding="15px" height="39" width="39" />
 
         <NavDropdown.Divider />
         <div className={style.dropdown_item}>Add an existing account</div>

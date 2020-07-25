@@ -6,7 +6,13 @@ import { Container, Row, Col } from "react-bootstrap";
 import Views from "./views";
 
 function App() {
-  const [tweets, setTweets] = useState([]);
+  const [tweets, setTweets] = useState([
+    {
+      user: "Ori Mazrafi",
+      tweet:
+        "Hi, I am here to tweet about a great course and instructor for language coding that I am taking online. I just finished his java tutorial, and I must say that he is the guy to learn from. check his out. you will not regret!",
+    },
+  ]);
   const handleTweetSubmit = (tweet) => {
     console.log({ tweet });
     setTweets((pre) => [...pre, { user: "Ori Mazrafi", tweet }]);
