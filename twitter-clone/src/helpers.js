@@ -121,6 +121,7 @@ export const tweetOptionsIcons = [
       "M12 21.638h-.014C9.403 21.59 1.95 14.856 1.95 8.478c0-3.064 2.525-5.754 5.403-5.754 2.29 0 3.83 1.58 4.646 2.73.814-1.148 2.354-2.73 4.645-2.73 2.88 0 5.404 2.69 5.404 5.755 0 6.376-7.454 13.11-10.037 13.157H12zM7.354 4.225c-2.08 0-3.903 1.988-3.903 4.255 0 5.74 7.034 11.596 8.55 11.658 1.518-.062 8.55-5.917 8.55-11.658 0-2.267-1.823-4.255-3.903-4.255-2.528 0-3.94 2.936-3.952 2.965-.23.562-1.156.562-1.387 0-.014-.03-1.425-2.965-3.954-2.965z",
     color: "red",
     numberOfLikes: 2,
+    likeByMe: false,
     height: "30px",
   },
   {
@@ -136,5 +137,12 @@ export const tweetOptionsIcons = [
       "M12 22c-.414 0-.75-.336-.75-.75V2.75c0-.414.336-.75.75-.75s.75.336.75.75v18.5c0 .414-.336.75-.75.75zm5.14 0c-.415 0-.75-.336-.75-.75V7.89c0-.415.335-.75.75-.75s.75.335.75.75v13.36c0 .414-.337.75-.75.75zM6.86 22c-.413 0-.75-.336-.75-.75V10.973c0-.414.337-.75.75-.75s.75.336.75.75V21.25c0 .414-.335.75-.75.75z",
     color: "blue",
     height: "30px",
+  },
+];
+export const tweetsArray = [
+  {
+    user: "Ori Mazrafi",
+    tweet:
+      "Hi, I am here to tweet about a great course and instructor for language coding that I am taking online. I just finished his java tutorial, and I must say that he is the guy to learn from. check his out. you will not regret!",
   },
 ];

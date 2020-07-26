@@ -31,3 +31,17 @@
     // }
   }
 }
+.sidebar-users-dropdown {
+  a {
+    padding: 0;
+    &::after {
+      display: none;
+    }
+  }
+}
+.grey-hover-background {
+  width: 250px;
+  &:hover {
+    background-color: rgba(29, 161, 242, 0.1);
+  }
+}

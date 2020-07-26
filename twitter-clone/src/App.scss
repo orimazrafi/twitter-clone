@@ -63,7 +63,7 @@
           margin-top: 5px;
         }
       }
-      input {
+      textarea {
         font-size: 19px;
         font-weight: 400;
         &:focus,
@@ -72,9 +72,12 @@
           box-shadow: unset;
         }
       }
-      ::-webkit-input-placeholder {
+      ::-webkit-textarea-placeholder {
         /* Chrome/Opera/Safari */
         // color: pink;
+        // textarea[placeholder] { text-soverflow: ellipsis; }
+        // overflow: visible;
+
         font-size: 19px;
         font-weight: 600;
         color: #9197a3;
@@ -84,7 +87,7 @@
         font-weight: 600;
         color: #9197a3;
       }
-      :-ms-input-placeholder {
+      :-ms-textarea-placeholder {
         font-size: 19px;
         font-weight: 600;
         color: #9197a3;

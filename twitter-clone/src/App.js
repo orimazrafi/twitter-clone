@@ -4,15 +4,10 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Sidebar } from "./components/Sidebar/Sidebar";
 import { Container, Row, Col } from "react-bootstrap";
 import Views from "./views";
+import { tweetsArray } from "./helpers";
 
 function App() {
-  const [tweets, setTweets] = useState([
-    {
-      user: "Ori Mazrafi",
-      tweet:
-        "Hi, I am here to tweet about a great course and instructor for language coding that I am taking online. I just finished his java tutorial, and I must say that he is the guy to learn from. check his out. you will not regret!",
-    },
-  ]);
+  const [tweets, setTweets] = useState(tweetsArray);
   const handleTweetSubmit = (tweet) => {
     console.log({ tweet });
     setTweets((pre) => [...pre, { user: "Ori Mazrafi", tweet }]);
@@ -45,7 +40,12 @@ function App() {
               <Route
                 exact
                 path="/profile"
-                render={() => <Views.Profile tweets={tweets} />}
+                render={() => (
+                  <Views.Profile
+                    tweets={tweets}
+                    onTweetSubmit={handleTweetSubmit}
+                  />
+                )}
               />
               <Route exact path="/more" component={Views.More} />
               <Route path="/" component={Views.NotFound} />
