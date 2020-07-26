@@ -1,4 +1,5 @@
 .tweet_options_wrapper {
+
   .blue,
   .green,
   .red {
@@ -6,12 +7,14 @@
     border-radius: 50%;
     fill: "currentcolor";
   }
+
   .blue {
     &:hover {
       background-color: rgba(29, 161, 242, 0.1);
       fill: rgb(29, 161, 242);
     }
   }
+
   .green {
     &:hover {
       background-color: rgba(23, 191, 99, 0.1);
@@ -19,28 +22,33 @@
       fill: rgb(23, 191, 99);
     }
   }
+
   .red {
     &:hover {
       background-color: rgba(224, 36, 94, 0.1);
       fill: rgb(224, 36, 94);
 
-      + span {
+      +span {
         color: rgb(224, 36, 94);
       }
     }
-    // }
+
   }
 }
+
 .sidebar-users-dropdown {
   a {
     padding: 0;
+
     &::after {
       display: none;
     }
   }
 }
+
 .grey-hover-background {
   width: 250px;
+
   &:hover {
     background-color: rgba(29, 161, 242, 0.1);
   }

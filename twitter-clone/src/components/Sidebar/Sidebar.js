@@ -40,7 +40,7 @@ export const Sidebar = ({ onTweetSubmit }) => {
       <Container fluid className={style.sidebar}>
         <Row>
           <Col>
-            <Nav>
+            <Nav style={{ flexDirection: "column" }}>
               {sidebarList.map((item, index) =>
                 !item.label ? (
                   <LinkHover
@@ -63,32 +63,32 @@ export const Sidebar = ({ onTweetSubmit }) => {
                     </svg>
                   </LinkHover>
                 ) : (
-                  <LinkHover
-                    item={item}
-                    key={Math.random()}
-                    index={index}
-                    setActiveLink={setActiveLink}
-                  >
-                    <svg
-                      style={{ width: "32px" }}
-                      viewBox="0 0 24 24"
-                      className={
-                        activeLink === index ? style.activeSvg : style.svg
-                      }
+                    <LinkHover
+                      item={item}
+                      key={Math.random()}
+                      index={index}
+                      setActiveLink={setActiveLink}
                     >
-                      <path d={item.svgPath}></path>
-                    </svg>
-                    <span
-                      className={
-                        activeLink === index
-                          ? style.active + " " + style.label
-                          : style.label
-                      }
-                    >
-                      {item.label}
-                    </span>
-                  </LinkHover>
-                )
+                      <svg
+                        style={{ width: "32px" }}
+                        viewBox="0 0 24 24"
+                        className={
+                          activeLink === index ? style.activeSvg : style.svg
+                        }
+                      >
+                        <path d={item.svgPath}></path>
+                      </svg>
+                      <span
+                        className={
+                          activeLink === index
+                            ? style.active + " " + style.label
+                            : style.label
+                        }
+                      >
+                        {item.label}
+                      </span>
+                    </LinkHover>
+                  )
               )}
             </Nav>
           </Col>

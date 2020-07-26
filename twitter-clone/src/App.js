@@ -17,9 +17,9 @@ function App() {
       <Container fluid>
         <Row>
           <Col xs={3}>
-            <Container style={{ overflowY: "scroll", height: "100vh" }}>
+            <Container style={{ overflowY: "auto", height: "100vh" }}>
               <Row>
-                <Col xs={{ span: 4, offset: 2 }}>
+                <Col xs={{ offset: 2 }}>
                   <Sidebar onTweetSubmit={handleTweetSubmit} />
                 </Col>
               </Row>
@@ -27,7 +27,7 @@ function App() {
           </Col>
           <Col xs={5}>
             <Switch>
-              <Route exact path="/home" component={Views.HomePage} />
+              <Route exact path="/" component={Views.HomePage} />
               <Route exact path="/explore" component={Views.Explore} />
               <Route
                 exact
