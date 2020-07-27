@@ -2,9 +2,32 @@
   .card {
     border: 1px solid rgb(230, 236, 240);
     padding: 7px 0;
+
     &:hover {
       cursor: pointer;
       background: rgba(189, 215, 231, 0.1);
     }
+  }
+}
+
+.tabs_generic {
+  font-size: 15px;
+  font-weight: bold;
+
+  a.link {
+    color: gray;
+    text-decoration: none;
+  }
+
+  a.active_link {
+    text-decoration: none;
+    color: rgb(29, 161, 242);
+
+    &+hr {
+      margin-bottom: -15px;
+      border-bottom: 3px solid rgb(29, 161, 242);
+      ;
+    }
+
   }
 }

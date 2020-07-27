@@ -7,6 +7,8 @@ import { More } from "./More/More";
 import { Lists } from "./Lists/Lists";
 import { Messages } from "./Messages/Messages";
 import { Profile } from "./Profile/Profile";
+import { Replies } from "./Replies/Replies"
+import { Tweet } from "./Tweet/Tweet"
 export default {
   BookMarks,
   HomePage,
@@ -17,4 +19,6 @@ export default {
   Lists,
   Messages,
   Profile,
+  Tweet,
+  Replies
 };

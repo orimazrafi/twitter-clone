@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { ImageAndEmail } from "../../components/ImageAndEmail/ImageAndEmail";
 import style from "./style.module.scss";
-import { TweetsOptions } from "../../components/TweetsOptions/TweetsOptions";
 import { TweetModal } from "../../components/TweetModal/TweetModal";
+import { TabsGeneric } from "../../components/TabsGeneric/TabsGeneric";
+import { Link, Route } from "react-router-dom";
+import { Tweet } from './../Tweet/Tweet';
+import { Replies } from "../Replies/Replies";
+import { Media } from './../Media/Media';
+import { Likes } from './../Likes/Likes';
 export const Profile = ({ tweets, onTweetSubmit }) => {
-  const CardWrapper = (props) => (
-    <div className={style.card}>{props.children}</div>
-  );
-
+  const [activeTab, setActiveTab] = useState("profile")
   const [modalShow, setModalShow] = useState(false);
   const [tweet, setTweet] = useState("");
   const handleTweet = (value) => {
@@ -23,46 +24,25 @@ export const Profile = ({ tweets, onTweetSubmit }) => {
   const handleLike = () => {
     console.log("like");
   };
-  const withCardBorderGenerator = (InnerComponent) => (props) => (
-    <div className={style.profile}>
-      <CardWrapper props={props}>
-        <InnerComponent {...props} />
-      </CardWrapper>
-    </div>
-  );
-  const TweetCard = ({ tweet }) => (
-    <>
-      <Row>
-        <Col>
-          <ImageAndEmail
-            flexDisplay="flex"
-            date="Jul 30, 2019"
-            fontWeight="bold"
-            height="45"
-            width="45"
-          />
-        </Col>
-      </Row>
-      <Row>
-        <Col xs={{ span: 11, offset: 1 }}>
-          <div style={{ marginLeft: "23px", marginTop: "-25px" }}>
-            {tweet.tweet}
-          </div>
-        </Col>
-      </Row>
-      <div style={{ marginLeft: "55px", marginTop: "10px" }}>
-        <TweetsOptions onAddToTweet={handleTweetModal} onLike={handleLike} />
-      </div>
-    </>
-  );
-  const TweetCardWrapper = withCardBorderGenerator(TweetCard);
+
 
   return (
     <>
+      <TabsGeneric defaultKey={"/profile"} >
+        <Container className={style.tabs_generic}>
+          <Row>
+            <TabItem size={3} tabName={"profile"} tabText={"Tweets"} activeTab={activeTab} setActiveTab={setActiveTab} />
+            <TabItem size={3} tabName={"profile/replies"} tabText={"Tweets & replies"} activeTab={activeTab} setActiveTab={setActiveTab} />
+            <TabItem size={3} tabName={"profile/media"} tabText={"Media"} activeTab={activeTab} setActiveTab={setActiveTab} />
+            <TabItem size={3} tabName={"profile/likes"} tabText={"Likes"} activeTab={activeTab} setActiveTab={setActiveTab} />
+          </Row>
+        </Container>
+      </TabsGeneric>
       <Container fluid className={style.profile}>
-        {tweets?.map((tweet) => (
-          <TweetCardWrapper tweet={tweet} key={Math.random()} />
-        ))}
+        <Route exact path="/profile" render={() => <Tweet tweets={tweets} onLike={handleLike} onAddToTweet={handleTweetModal} />} />
+        <Route path="/profile/replies" render={() => <Replies />} />
+        <Route path="/profile/media" render={() => <Media />} />
+        <Route path="/profile/likes" render={() => <Likes />} />
       </Container>
       <TweetModal
         anotherTweet={true}
@@ -76,3 +56,10 @@ export const Profile = ({ tweets, onTweetSubmit }) => {
     </>
   );
 };
+
+const TabItem = (props) => <Col xs={props.size} style={{ textAlign: "center", padding: "15px" }} onClick={() => props.setActiveTab(props.tabName)}>
+  <Link to={`/${props.tabName}`} className={props.activeTab === props.tabName ? style.active_link : style.link} >{props.tabText}</Link>
+  {props.activeTab === props.tabName &&
+    <hr />
+  }
+</Col>

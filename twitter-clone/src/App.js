@@ -38,7 +38,6 @@ function App() {
               <Route exact path="/bookmarks" component={Views.BookMarks} />
               <Route exact path="/lists" component={Views.Lists} />
               <Route
-                exact
                 path="/profile"
                 render={() => (
                   <Views.Profile
@@ -47,8 +46,8 @@ function App() {
                   />
                 )}
               />
+
               <Route exact path="/more" component={Views.More} />
-              <Route path="/" component={Views.NotFound} />
             </Switch>
           </Col>
           <Col xs={4}>
