@@ -37,6 +37,14 @@
 }
 
 .sidebar-users-dropdown {
+  .dropdown-menu {
+    padding: 0;
+  }
+
+  .grey-hover-background {
+    padding: 10px;
+  }
+
   a {
     padding: 0;
 

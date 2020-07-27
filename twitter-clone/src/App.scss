@@ -34,19 +34,23 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
+
 .tweet-modal {
   .modal-dialog {
     .modal-content {
       border: unset;
       width: 600px;
       margin-left: -50px;
+
       .close-btn-wrapper {
         padding: 10px;
         height: 50px;
+
         svg {
           height: 40px;
           padding: 10px;
@@ -59,19 +63,23 @@
             cursor: pointer;
           }
         }
+
         hr {
           margin-top: 5px;
         }
       }
+
       textarea {
         font-size: 19px;
         font-weight: 400;
+
         &:focus,
         &:active {
           outline: 0;
           box-shadow: unset;
         }
       }
+
       ::-webkit-textarea-placeholder {
         /* Chrome/Opera/Safari */
         // color: pink;
@@ -82,16 +90,19 @@
         font-weight: 600;
         color: #9197a3;
       }
+
       ::-moz-placeholder {
         font-size: 19px;
         font-weight: 600;
         color: #9197a3;
       }
+
       :-ms-textarea-placeholder {
         font-size: 19px;
         font-weight: 600;
         color: #9197a3;
       }
+
       :-moz-placeholder {
         font-size: 19px;
         font-weight: 600;
@@ -100,21 +111,57 @@
     }
   }
 }
+
 .sidebar-user-dropdown {
+
+
   .show {
     position: relative !important;
     bottom: 70px !important;
     width: 300px;
     // padding: 15px;
   }
+
   .dropdown-toggle {
     color: black;
+
     &::after {
       display: none;
     }
   }
+
   .dropdown_item {
     padding-left: 15px;
     font-weight: 500 !important;
+  }
+}
+
+.modal-dialog {
+  .modal-content {
+    border: unset;
+    width: 600px;
+    margin-left: -50px;
+
+    .close-btn-wrapper {
+      padding: 10px;
+      height: 50px;
+
+      svg {
+        height: 40px;
+        padding: 10px;
+        fill: rgba(29, 161, 242, 1);
+
+        &:hover {
+          background: rgba(29, 161, 242, 0.1);
+          border-radius: 50%;
+          padding: 10px;
+          cursor: pointer;
+        }
+      }
+
+      hr {
+        margin-top: 5px;
+      }
+    }
   }
 }
