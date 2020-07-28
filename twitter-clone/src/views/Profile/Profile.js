@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import style from "./style.module.scss";
 import { TweetModal } from "../../components/TweetModal/TweetModal";
 import { TabsGeneric } from "../../components/TabsGeneric/TabsGeneric";
@@ -38,15 +38,19 @@ export const Profile = ({ tweets, onTweetSubmit }) => {
   return (
     <>
       <UserCard tweets={tweets} />
+      <UserBigCard user={"ori mazrafi"} />
       <TabsGeneric defaultKey={"profile"} >
         <Container className={style.tabs_generic}>
-          <Row>
-            <TabItem size={3} tabName={"profile"} tabText={"Tweets"} activeTab={activeTab} handleActiveTab={handleActiveTab} />
-            <TabItem size={3} tabName={"profile/replies"} tabText={"Tweets & replies"} activeTab={activeTab} handleActiveTab={handleActiveTab} />
-            <TabItem size={3} tabName={"profile/media"} tabText={"Media"} activeTab={activeTab} handleActiveTab={handleActiveTab} />
-            <TabItem size={3} tabName={"profile/likes"} tabText={"Likes"} activeTab={activeTab} handleActiveTab={handleActiveTab} />
-          </Row>
-          <hr className={style.tabs_bottom_border} />
+          <div style={{ padding: "0 15px" }}>
+            <Row style={{ border: "1px solid lightgray", borderTop: 0 }}
+            // className={activeTab === "profile/media" || activeTab === "profile/likes" ? style.media_like_row : style.row}
+            >
+              <TabItem size={3} tabName={"profile"} tabText={"Tweets"} activeTab={activeTab} handleActiveTab={handleActiveTab} />
+              <TabItem size={3} tabName={"profile/replies"} tabText={"Tweets & replies"} activeTab={activeTab} handleActiveTab={handleActiveTab} />
+              <TabItem size={3} tabName={"profile/media"} tabText={"Media"} activeTab={activeTab} handleActiveTab={handleActiveTab} />
+              <TabItem size={3} tabName={"profile/likes"} tabText={"Likes"} activeTab={activeTab} handleActiveTab={handleActiveTab} />
+            </Row>
+          </div>
         </Container>
       </TabsGeneric>
       <Container fluid className={style.profile}>
@@ -85,7 +89,6 @@ export const Profile = ({ tweets, onTweetSubmit }) => {
 };
 
 const TabItem = (props) => <Col xs={props.size} className={style.link_wrapper} style={{ textAlign: "center", padding: "15px" }} onClick={() => props.handleActiveTab(props.tabName)}>
-  {console.log(`/${props.tabName}`)}
   <div className={props.activeTab === props.tabName ? style.active_link : style.link} >{props.tabText}</div>
   {props.activeTab === props.tabName &&
     <hr />
@@ -102,3 +105,29 @@ const UserCard = ({ tweets }) => <Container className={style.user_card}>
     </Col>
   </Row>
 </Container>
+const UserBigCard = (props) =>
+  <Container  >
+    <div style={{ margin: 0, border: "1px solid lightgray", marginTop: "60px", borderBottom: 0 }}>
+      <Row style={{ margin: 0 }}>
+        <Col style={{ height: "195px", margin: 0, background: "rgb(204, 214, 221)" }}> </Col>
+      </Row>
+      <Row>
+        <Col><img src="https://pbs.twimg.com/profile_images/1086330360852492295/PExQPH9a_200x200.jpg" height="150" width="150" alt={props.user} style={{ borderRadius: "50%", position: "absolute", left: "35px", bottom: 0, padding: "5px", background: "white" }} /></Col>
+        <Col style={{ textAlign: "end", margin: "20px 20px 0 0" }}> <Button variant="outline-primary" style={{ padding: "10px", borderRadius: "25px", fontWeight: "bold" }}> Edit Profile</Button> </Col>
+      </Row>
+      <Row><Col style={{ marginLeft: "30px", margin: "5px 30px", fontSize: "19px", fontWeight: "800" }}>Ori Mazrafi</Col></Row>
+      <Row><Col style={{ marginLeft: "30px", margin: "5px 30px", fontSize: "15px", color: "gray" }}>@OMazrafi</Col></Row>
+      <Row><Col style={{ marginLeft: "30px", margin: "5px 30px", fontSize: "15px" }}>the programmer</Col></Row>
+      <Row><Col style={{ marginLeft: "30px", margin: "5px 30px" }}><DiaryIcon /><span style={{ color: "gray", marginLeft: "5px" }}>Joined January 2019</span> </Col></Row>
+      <Row><Col style={{ marginLeft: "30px" }}>
+        <a href="8 Following" style={{ marginRight: "10px" }}>8 Following</a>
+        <a href="0 Followers">0 Followers</a>
+      </Col></Row>
+    </div>
+
+
+  </Container>
+
+const DiaryIcon = () => <svg viewBox="0 0 24 24" style={{ height: "20px" }}>
+  <g><path d="M19.708 2H4.292C3.028 2 2 3.028 2 4.292v15.416C2 20.972 3.028 22 4.292 22h15.416C20.972 22 22 20.972 22 19.708V4.292C22 3.028 20.972 2 19.708 2zm.792 17.708c0 .437-.355.792-.792.792H4.292c-.437 0-.792-.355-.792-.792V6.418c0-.437.354-.79.79-.792h15.42c.436 0 .79.355.79.79V19.71z"></path><circle cx="7.032" cy="8.75" r="1.285"></circle><circle cx="7.032" cy="13.156" r="1.285"></circle><circle cx="16.968" cy="8.75" r="1.285"></circle><circle cx="16.968" cy="13.156" r="1.285"></circle><circle cx="12" cy="8.75" r="1.285"></circle><circle cx="12" cy="13.156" r="1.285"></circle><circle cx="7.032" cy="17.486" r="1.285"></circle><circle cx="12" cy="17.486" r="1.285"></circle></g>
+</svg>

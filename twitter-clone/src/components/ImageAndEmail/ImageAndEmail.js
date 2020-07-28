@@ -5,7 +5,7 @@ export const ImageAndEmail = (props) => (
   <Container fluid>
     <div style={{ display: "flex", paddingLeft: props.padding }}>
       <Row>
-        <Col xs={2}>
+        <Col xs={12}>
           <Image
             src="https://pbs.twimg.com/profile_images/1086330360852492295/PExQPH9a_x96.jpg"
             roundedCircle
@@ -13,9 +13,10 @@ export const ImageAndEmail = (props) => (
             width={props.height}
           />
         </Col>
+
       </Row>
       <Row>
-        <Col>
+        <Col >
           <div
             style={{
               marginLeft: "10px",
@@ -35,8 +36,13 @@ export const ImageAndEmail = (props) => (
               </div>
             )}
           </div>
+
         </Col>
+
       </Row>
+      <Col  >
+        {props.followButton}
+      </Col>
       {props.padding && (
         <svg
           style={{

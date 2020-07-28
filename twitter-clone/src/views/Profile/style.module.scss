@@ -52,11 +52,14 @@
 .tabs_generic {
   font-size: 15px;
   font-weight: bold;
-  margin-top: 3.5rem;
+
+  .media_like_row {
+    margin-right: -7px;
+  }
 
   .link_wrapper {
     text-align: center;
-    padding: 15px;
+    padding: 15px 0 !important;
 
     &:hover {
       background: rgba(29, 161, 242, 0.1);
