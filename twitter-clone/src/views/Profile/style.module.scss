@@ -1,3 +1,42 @@
+.user_card {
+  position: fixed;
+  width: 673px !important;
+  background: white;
+  z-index: 1;
+
+  .inner_wrapper {
+    border: 1px solid lightgray;
+    border-top: 0;
+    margin: 0;
+
+    .arrow_wrapper {
+      position: relative;
+      top: 20px;
+      left: 20px;
+
+      svg {
+        height: 30px;
+        fill: rgb(29, 161, 242)
+      }
+    }
+
+
+    .headline {
+      font-size: 19px;
+      font-weight: bold;
+      margin-bottom: 4px;
+      margin-top: 10px;
+    }
+
+    .text_muted {
+      color: rgb(101, 119, 134);
+      font-size: 13px;
+      font-weight: 300;
+      margin-bottom: 8px;
+    }
+  }
+}
+
 .profile {
   .card {
     border: 1px solid rgb(230, 236, 240);
@@ -13,6 +52,7 @@
 .tabs_generic {
   font-size: 15px;
   font-weight: bold;
+  margin-top: 3.5rem;
 
   .link_wrapper {
     text-align: center;
@@ -23,14 +63,14 @@
       cursor: pointer;
     }
 
-    a.link {
+    div.link {
       color: gray;
       text-decoration: none;
 
 
     }
 
-    a.active_link {
+    div.active_link {
       text-decoration: none;
       color: rgb(29, 161, 242);
 

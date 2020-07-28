@@ -46,7 +46,6 @@ function App() {
                   />
                 )}
               />
-
               <Route exact path="/more" component={Views.More} />
             </Switch>
           </Col>
