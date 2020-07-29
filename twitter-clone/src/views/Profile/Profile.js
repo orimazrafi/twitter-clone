@@ -43,7 +43,6 @@ export const Profile = ({ tweets, onTweetSubmit }) => {
         <Container className={style.tabs_generic}>
           <div style={{ padding: "0 15px" }}>
             <Row style={{ border: "1px solid lightgray", borderTop: 0 }}
-            // className={activeTab === "profile/media" || activeTab === "profile/likes" ? style.media_like_row : style.row}
             >
               <TabItem size={3} tabName={"profile"} tabText={"Tweets"} activeTab={activeTab} handleActiveTab={handleActiveTab} />
               <TabItem size={3} tabName={"profile/replies"} tabText={"Tweets & replies"} activeTab={activeTab} handleActiveTab={handleActiveTab} />

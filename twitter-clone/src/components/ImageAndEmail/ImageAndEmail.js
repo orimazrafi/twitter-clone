@@ -5,9 +5,9 @@ export const ImageAndEmail = (props) => (
   <Container fluid>
     <div style={{ display: "flex", paddingLeft: props.padding }}>
       <Row>
-        <Col xs={12}>
+        <Col >
           <Image
-            src="https://pbs.twimg.com/profile_images/1086330360852492295/PExQPH9a_x96.jpg"
+            src={props.img}
             roundedCircle
             height={props.height}
             width={props.height}
@@ -24,11 +24,11 @@ export const ImageAndEmail = (props) => (
               display: props.flexDisplay,
             }}
           >
-            <div className="" style={{ fontWeight: props.fontWeight }}>
-              Ori Mazrafi
+            <div className="" style={{ fontWeight: props.fontWeight, marginBottom: props.closerRows, marginLeft: props.marginLeft }}>
+              {props.fullName}
             </div>{" "}
-            <div className="ml-1 mr-1" style={{ color: "rgb(101, 119, 134)" }}>
-              @OMazrafi
+            <div className={props.row ? props.row : ""} style={{ color: "rgb(101, 119, 134)" }}>
+              {props.userName}
             </div>
             {props.date && (
               <div style={{ color: "rgb(101, 119, 134)" }}>
