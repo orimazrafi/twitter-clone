@@ -181,3 +181,16 @@ export const peopleToFollow = [
     people: ["Stav Shaffir", "שלי יחימוביץ"]
   }
 ]
+export const youMightLike = [
+  {
+    img: "https://pbs.twimg.com/profile_images/1227130592044756992/SQq1n5p7_bigger.jpg",
+    fullName: "Aya Korem",
+    userName: "@ayakorem",
+  },
+  {
+    img: "https://pbs.twimg.com/profile_images/1189536402456956935/SS3WYEsa_bigger.jpg",
+    fullName: "Noa Landau נעה לנדאו",
+    userName: "@noa_landau",
+  },
+
+]

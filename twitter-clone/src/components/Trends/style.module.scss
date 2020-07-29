@@ -1,0 +1,56 @@
+.trends_wrapper {
+    margin-top: 15px;
+
+    .backgroundWrapper {
+        cursor: pointer;
+        width: 100%;
+
+        div.with_hover {
+            &:hover {
+                background-color: rgba(245, 248, 250, 0.3) !important;
+            }
+        }
+    }
+
+    .serach_tweet_input {
+        border-radius: 25px;
+        display: block;
+        width: 100%;
+        background-color: rgb(230, 236, 240);
+        padding: 10px 20px;
+        border: unset;
+
+        &:focus {
+            outline: none;
+        }
+
+    }
+
+    ::-webkit-input-placeholder {
+        /* Chrome/Opera/Safari */
+        font-size: 20px;
+        padding-left: 30px;
+        // color: white;
+    }
+
+    ::-moz-placeholder {
+        /* Firefox 19+ */
+        font-size: 20px;
+        padding-left: 30px;
+    }
+
+    :-ms-input-placeholder {
+        /* IE 10+ */
+        font-size: 20px;
+        padding-left: 30px;
+    }
+
+    :-moz-placeholder {
+        /* Firefox 18- */
+        font-size: 20px;
+        padding-left: 30px;
+    }
+
+
+
+}

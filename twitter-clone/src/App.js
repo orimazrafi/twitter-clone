@@ -5,6 +5,7 @@ import { Sidebar } from "./components/Sidebar/Sidebar";
 import { Container, Row, Col } from "react-bootstrap";
 import Views from "./views";
 import { tweetsArray } from "./helpers";
+import { Trends } from './components/Trends/Trends';
 
 function App() {
   const [tweets, setTweets] = useState(tweetsArray);
@@ -52,7 +53,7 @@ function App() {
           <Col xs={4}>
             <Container>
               <Row>
-                <Col xs={10}>Trends</Col>
+                <Col xs={9}><Trends /></Col>
               </Row>
             </Container>
           </Col>

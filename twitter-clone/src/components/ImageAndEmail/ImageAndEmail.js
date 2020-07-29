@@ -3,7 +3,7 @@ import React from "react";
 
 export const ImageAndEmail = (props) => (
   <Container fluid>
-    <div style={{ display: "flex", paddingLeft: props.padding }}>
+    <div style={{ display: "flex", paddingLeft: props.padding, padding: props.padding }}>
       <Row>
         <Col >
           <Image
