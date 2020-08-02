@@ -1,7 +1,7 @@
 import React from 'react'
 import style from "./style.module.scss"
 import { ImageAndEmail } from '../ImageAndEmail/ImageAndEmail'
-import { Button } from 'react-bootstrap'
+import { Button, Container } from 'react-bootstrap'
 import { youMightLike } from "../../helpers"
 import { Link } from 'react-router-dom'
 import { SvgIcon } from './../SvgIcon/SvgIcon';
@@ -14,6 +14,7 @@ export const Trends = () => {
         <TweetSearch />
         <YouMightLike />
         <TrendsForYou />
+        <TermsOfUse />
     </div>)
 
 }
@@ -63,11 +64,9 @@ const EdgeOfMightLike = (props) => <BackgroundWrapper borderRadius={props.border
 </BackgroundWrapper>
 const TrendsForYou = (props) => <div>
     <EdgeOfMightLike
-        // {...props}
         borderRadius="25px 25px 0 0"
         toRender={
             <div style={{ display: "flex" }}>
-                {console.log({ props })}
                 <div style={{ fontWeight: "bold", fontSize: "19px", marginLeft: "15px" }}>Trends For Your</div>
                 <div style={{ marginLeft: "auto" }}>
                     <SvgIcon
@@ -126,7 +125,8 @@ const DropDownWithSmiley = () => <DropDownRefresh
             svgPath2: "M12 13.415c1.892 0 3.633.95 4.656 2.544.224.348.123.81-.226 1.035-.348.226-.812.124-1.036-.226-.747-1.162-2.016-1.855-3.395-1.855s-2.648.693-3.396 1.854c-.224.35-.688.45-1.036.225-.35-.224-.45-.688-.226-1.036 1.025-1.594 2.766-2.545 4.658-2.545zm4.216-3.957c0 .816-.662 1.478-1.478 1.478s-1.478-.66-1.478-1.478c0-.817.662-1.478 1.478-1.478s1.478.66 1.478 1.478zm-5.476 0c0 .816-.662 1.478-1.478 1.478s-1.478-.66-1.478-1.478c0-.817.662-1.478 1.478-1.478.817 0 1.478.66 1.478 1.478z",
             width: "300px"
 
-        }} text={"This trend is abusive or harmful"} />}
+        }}
+        text={"This trend is abusive or harmful"} />}
     thirdRow={<DropdownItem
         icon={{
             height: "30px",
@@ -148,17 +148,77 @@ const DropDownWithSmiley = () => <DropDownRefresh
 const TrendsForYouReport = (props) => <div style={{ marginLeft: "15px" }}>
     <div style={{ display: "flex" }}>
         <div style={{ color: "rgb(101, 119, 134)", fontSize: "13px", fontWeight: "300" }}>
-            {/* Trending in Israel */}
             {props.where}
         </div>
         <DropDownWithSmiley />
     </div>
     <div style={{ fontSize: "20px", fontWeight: "bold", textAlign: "end", marginRight: "15px" }}>
         {props.headline}
-        {/* תשעה באב */}
     </div>
     <div syle={{ color: "rgb(101, 119, 134)", fontSize: "13px", fontWeight: "300" }}>
         {props.tweets}
-        {/* 1,979 tweets */}
     </div>
 </div >
+const TermsOfUse = () =>
+    <Container>
+        {[
+            "Terms",
+            "Privacy policy",
+            "Cookies",
+            "Ads info",
+            "More",
+            "© 2020 Twitter, Inc."].map(term =>
+                (
+                    <RenderText text={term} key={Math.random()} />
+                ))}
+
+
+    </Container>
+const RenderText = ({ text }) =>
+    text !== "More" ?
+        <a className="mr-1"
+            style={{ color: "gray", fontSize: "15px", fontWeight: "300" }} href={text}>
+
+            {text}
+        </a> :
+        <div style={{ display: "inline", color: "gray" }}
+            className="mr-4"
+        >
+            More
+        <DropDownRefresh
+                icon={{
+                    height: "15px",
+                    svgPath: "M20.207 8.147c-.39-.39-1.023-.39-1.414 0L12 14.94 5.207 8.147c-.39-.39-1.023-.39-1.414 0-.39.39-.39 1.023 0 1.414l7.5 7.5c.195.196.45.294.707.294s.512-.098.707-.293l7.5-7.5c.39-.39.39-1.022 0-1.413z",
+                    marginRight: "15px",
+                    display: "inline-block"
+                }}
+
+                firstRow={<DropdownItem
+                    icon={{
+                        height: "30px",
+                        width: "150px"
+                    }}
+                    text="About" />}
+                secondRow={<DropdownItem
+                    icon={{
+                        height: "30px",
+                        width: "150px"
+
+                    }}
+                    text="Status" />
+                }
+                thirdRow={<DropdownItem icon={{
+                    height: "30px",
+                    width: "150px"
+
+                }} text="Businesses" />}
+                fourthRow={<DropdownItem icon={{
+                    height: "30px",
+                    width: "150px"
+
+                }} text="Developers" />}
+            />
+        </div>
+
+
+

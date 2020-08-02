@@ -6,6 +6,7 @@ export const DropDownRefresh = ({ icon, firstRow, secondRow, thirdRow, fourthRow
         style={{
             marginLeft: icon.marginLeft,
             marginRight: icon.marginRight,
+            display: icon.display
         }}
         className={"sidebar-users-dropdown"}
         title={
