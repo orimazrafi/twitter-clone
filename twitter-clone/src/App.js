@@ -28,7 +28,7 @@ function App() {
           </Col>
           <Col xs={5}>
             <Switch>
-              <Route exact path="/" component={Views.HomePage} />
+              <Route exact path="/" render={() => <Views.HomePage onTweetSubmit={handleTweetSubmit} />} />
               <Route exact path="/explore" component={Views.Explore} />
               <Route
                 exact

@@ -1,42 +1,32 @@
-.tweet_btn {
-  background-color: rgb(29, 161, 242);
-  border-radius: 25px !important;
-  color: white;
-  padding: 12px 50px;
-  margin-left: -15px;
-  margin-top: -10px;
-  font-size: 15px;
-  display: flex;
-  justify-content: center;
-  font-weight: bold;
-  &:hover {
-    cursor: pointer;
-    background-color: rgb(19, 117, 179);
-  }
-}
 .sidebar_wrapper {
   .sidebar {
     .link_wrapper {
       display: flex;
       margin: 5px 0;
+
       .sidebar_link {
         display: flex;
         padding: 10px;
+
         .activeSvg {
           fill: rgba(29, 161, 242, 1);
         }
+
         &:hover {
           text-decoration: none;
           background: rgba(29, 161, 242, 0.1);
           border-radius: 25px;
           padding: 10px;
+
           .svg {
             fill: rgba(29, 161, 242, 1);
           }
+
           .label {
             color: rgba(29, 161, 242, 1);
           }
         }
+
         .label {
           margin-left: 20px;
           align-self: center;
@@ -44,11 +34,13 @@
           font-weight: bold;
           font-size: 19px;
         }
+
         .active {
           color: rgba(29, 161, 242, 1);
         }
       }
     }
+
     .tweet_btn {
       padding: 10px 110px;
       margin-left: 15px;
@@ -57,24 +49,23 @@
 
   .user_link {
     margin-top: 100px;
+
     .items_wrapper {
       display: flex;
       flex-direction: row;
       width: 280px;
     }
+
     ::after {
       display: none;
     }
   }
 }
-.tweet_options_wrapper {
-  &:hover {
-    cursor: pointer;
-  }
-}
+
 .dropdown_item {
   font-weight: 500;
   margin-left: 15px;
+
   &:hover {
     cursor: pointer;
   }
