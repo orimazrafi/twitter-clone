@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Nav, NavDropdown } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import style from "./style.module.scss";
 import { sidebarList } from "../../helpers";
 import { TweetModal } from "../TweetModal/TweetModal";
@@ -18,7 +18,6 @@ const LinkHover = (props) => (
       role="button"
       data-focusable="true"
       className={style.sidebar_link}
-      onClick={() => props.setActiveLink(props.index)}
     >
       {props.children}
     </Link>
@@ -26,7 +25,7 @@ const LinkHover = (props) => (
 );
 
 export const Sidebar = ({ onTweetSubmit }) => {
-  const [activeLink, setActiveLink] = useState(0);
+  const location = useLocation()
   const [modalShow, setModalShow] = useState(false);
   const [tweet, setTweet] = useState("");
   const handleTweet = (value) => {
@@ -47,7 +46,6 @@ export const Sidebar = ({ onTweetSubmit }) => {
                     item={item}
                     key={Math.random()}
                     index={index}
-                    setActiveLink={setActiveLink}
                   >
                     <svg
                       style={{
@@ -67,20 +65,19 @@ export const Sidebar = ({ onTweetSubmit }) => {
                       item={item}
                       key={Math.random()}
                       index={index}
-                      setActiveLink={setActiveLink}
                     >
                       <svg
                         style={{ width: "32px" }}
                         viewBox="0 0 24 24"
                         className={
-                          activeLink === index ? style.activeSvg : style.svg
+                          item.link === location.pathname ? style.activeSvg : style.svg
                         }
                       >
                         <path d={item.svgPath}></path>
                       </svg>
                       <span
                         className={
-                          activeLink === index
+                          item.link === location.pathname
                             ? style.active + " " + style.label
                             : style.label
                         }
