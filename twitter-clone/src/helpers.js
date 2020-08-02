@@ -141,16 +141,21 @@ export const tweetOptionsIcons = [
 ];
 export const tweetsArray = [
   {
+    pic: "https://pbs.twimg.com/profile_images/1086330360852492295/PExQPH9a_bigger.jpg",
     user: "Ori Mazrafi",
     tweet:
       "Hi, I am here to tweet about a great course and instructor for language coding that I am taking online. I just finished his java tutorial, and I must say that he is the guy to learn from. check his out. you will not regret! @moshhamedani #java",
   },
   {
+    pic: "https://pbs.twimg.com/profile_images/1086330360852492295/PExQPH9a_bigger.jpg",
+
     user: "Ori Mazrafi",
     tweet:
       "Hello all my followers out there. rightnow i am taking  #node #nodejs  course online with @moshhamedani . Mosh is amazing instructor. i recommend all of you developers out there who want to get their skills upgrade mosh is the answer!",
   },
   {
+    pic: "https://pbs.twimg.com/profile_images/1086330360852492295/PExQPH9a_bigger.jpg",
+
     user: "Ori Mazrafi",
     tweet:
       ` #React course by 
@@ -158,7 +163,37 @@ export const tweetsArray = [
        i came across one of mosh's youtube tutorial and i was amazed for his knowledge and the ability to explain every aspect of coding. shortest and right way to become a expert developer!
       https://codewithmosh.com/p/mastering-react`
   },
-
+];
+export const otherUsersTweetsArray = [
+  {
+    pic: "https://pbs.twimg.com/profile_images/3244876900/690459bd36e1e21113c7ea635376f8c7_bigger.png",
+    user: "Stav Shaffir",
+    userName: "@StavShaffir",
+    tweetDate: "1h",
+    tweet:
+      `שיטת ההשלכה של נתניהו: האיש ששנים ממומן עי גורמים זרים - תמיד מאשים בכך את יריביו הפוליטיים; האיש שפוגע באינטרסים של ישראל - תמיד קורא ליריביו "עוכרי ישראל"; האיש שזורע פה כאוס ומפרק את מוסדות המדינה - קורא למפגינים נגדו "אנרכיסטים". האיש שמשתמש בדמוקרטיה כדי לרמוס אותה:`,
+    images: ["https://pbs.twimg.com/media/EeaW-5wXYAE06Ta?format=jpg&name=small"]
+  }
+  ,
+  {
+    pic: "https://pbs.twimg.com/profile_images/1282057272357683201/hm0ianWU_bigger.jpg",
+    user: "Kim Kardashian West",
+    userName: "@KimKardashian",
+    tweetDate: "Jul 31",
+    tweet: "",
+    images: ["https://pbs.twimg.com/media/EeRKg__U0AAZLrK?format=jpg&name=small", "https://pbs.twimg.com/media/EeRKhAeVAAEr3mP?format=jpg&name=small"]
+  },
+  {
+    pic: "https://pbs.twimg.com/profile_images/638710876023840769/YF855T_W_bigger.jpg",
+    user: "שלי יחימוביץ",
+    userName: "@Syechimovich",
+    tweetDate: "Aug 1",
+    tweet:
+      `@tamirbarr רק היום ראיתי את *עלייתו ונפילתו של שם טוב האבי* המעולללה של 
+      הגאון. אבל. גדודי שחקנים גברים בתפקיד רופא, שופט, מפיק, עורכי דין, קציני משטרה, שכנים, אסירים, סטטיסטים. נשים: ישבנים של רקדניות טוורקינג שבאות
+      להרים, מנקה פיליפינית, ארוסה בוגדנית. עד מתי אלוקים, עד מתי.`,
+    images: []
+  },
 ];
 export const fullHeart = "M12 21.638h-.014C9.403 21.59 1.95 14.856 1.95 8.478c0-3.064 2.525-5.754 5.403-5.754 2.29 0 3.83 1.58 4.646 2.73.814-1.148 2.354-2.73 4.645-2.73 2.88 0 5.404 2.69 5.404 5.755 0 6.376-7.454 13.11-10.037 13.157H12z"
 export const emptyHeart = "M12 21.638h-.014C9.403 21.59 1.95 14.856 1.95 8.478c0-3.064 2.525-5.754 5.403-5.754 2.29 0 3.83 1.58 4.646 2.73.814-1.148 2.354-2.73 4.645-2.73 2.88 0 5.404 2.69 5.404 5.755 0 6.376-7.454 13.11-10.037 13.157H12zM7.354 4.225c-2.08 0-3.903 1.988-3.903 4.255 0 5.74 7.034 11.596 8.55 11.658 1.518-.062 8.55-5.917 8.55-11.658 0-2.267-1.823-4.255-3.903-4.255-2.528 0-3.94 2.936-3.952 2.965-.23.562-1.156.562-1.387 0-.014-.03-1.425-2.965-3.954-2.965z";

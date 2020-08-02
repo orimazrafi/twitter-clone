@@ -1,10 +1,11 @@
 import React from "react";
-import { Row, Col, Container, Button } from "react-bootstrap";
+import { Row, Col, Container, Button, Image } from "react-bootstrap";
 import { ImageAndEmail } from "../../components/ImageAndEmail/ImageAndEmail";
 import style from "./style.module.scss";
 import parse from 'html-react-parser';
-import { TweetsOptions } from './../../components/TweetsOptions/TweetsOptions';
+// import { TweetsOptions } from './../../components/TweetsOptions/TweetsOptions';
 import { peopleToFollow } from './../../helpers';
+import { TweetsOptions } from "../../components/TweetsOptions/TweetsOptions";
 
 export const Tweet = (props) => {
     return <>
@@ -28,18 +29,18 @@ const withCardBorderGenerator = (InnerComponent) => (props) => (
         </CardWrapper>
     </div>
 );
-const TweetCard = ({ img, tweet, onAddToTweet, onLike }) => (
+const TweetCard = ({ tweet, onAddToTweet, onLike }) => (
     <>
         <Row>
             <Col>
                 <ImageAndEmail
-                    img={img}
+                    img={tweet.pic}
                     marginLeft="9px"
-                    fullName="Ori Mazarfi"
-                    userName="@OMazrafi"
+                    fullName={tweet.name}
+                    userName={tweet.userName}
                     row="mr-1 ml-1"
                     flexDisplay="flex"
-                    date="Jul 30, 2019"
+                    date={tweet.tweetDate}
                     fontWeight="bold"
                     height="45"
                     width="45"
@@ -48,12 +49,14 @@ const TweetCard = ({ img, tweet, onAddToTweet, onLike }) => (
         </Row>
         <Row>
             <Col xs={{ span: 11, offset: 1 }}>
-                <div style={{ marginLeft: "23px", marginTop: "-25px" }}>
+                <div style={{ marginLeft: "23px", marginTop: "-25px", paddingRight: "20px" }}>
                     <ParseTheTweet tweet={tweet.tweet} />
                 </div>
             </Col>
         </Row>
-        <div style={{ marginLeft: "55px", marginTop: "10px" }}>
+
+        <ImageTweetComponent tweet={tweet} />
+        <div style={{ marginLeft: "60px", marginTop: "10px" }}>
             <TweetsOptions onAddToTweet={onAddToTweet} onLike={onLike} />
         </div>
     </>
@@ -103,3 +106,37 @@ const PeopleToFollowMuted = (props) => <Container>
     </Row>
 
 </Container>
+const TweetImage = (props) =>
+    <Image src={props.pic} alt={props.userName} style={{ maxWidth: props.maxWidth, borderRadius: props.borderRadius }} />
+
+const ImageTweetComponent = ({ tweet }) =>
+    <>
+        {tweet?.images?.length === 1 ?
+            <div style={{ padding: "10px 20px 0 80px" }}>
+                <TweetImage
+                    pic={tweet.images[0]}
+                    userName={tweet.userName}
+                    maxWidth="100%"
+                    borderRadius="25px"
+                />
+            </div>
+            : null}
+        {tweet?.images?.length > 1 ?
+            <div style={{ padding: "10px 35px 0 95px", }}>
+                <Row>
+                    <TweetImage
+                        pic={tweet.images[0]}
+                        userName={tweet.userName}
+                        maxWidth="50%"
+                        borderRadius="25px 0 0  25px"
+                    />
+                    <TweetImage
+                        pic={tweet.images[1]}
+                        userName={tweet.userName}
+                        maxWidth="50%"
+                        borderRadius="0 25px 25px 0"
+                    />
+                </Row>
+            </div>
+            : null}
+    </>

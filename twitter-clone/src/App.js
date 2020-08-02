@@ -4,14 +4,19 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Sidebar } from "./components/Sidebar/Sidebar";
 import { Container, Row, Col } from "react-bootstrap";
 import Views from "./views";
-import { tweetsArray } from "./helpers";
+import { tweetsArray, otherUsersTweetsArray } from "./helpers";
 import { Trends } from './components/Trends/Trends';
 
 function App() {
-  const [tweets, setTweets] = useState(tweetsArray);
+  const [profileTweets, setProfileTweets] = useState(tweetsArray);
+  const [tweets, setTweets] = useState(otherUsersTweetsArray);
   const handleTweetSubmit = (tweet) => {
     console.log({ tweet });
     setTweets((pre) => [...pre, { user: "Ori Mazrafi", tweet }]);
+  };
+  const handleProfileTweetSubmit = (tweet) => {
+    console.log({ tweet });
+    setProfileTweets((pre) => [...pre, { user: "Ori Mazrafi", tweet }]);
   };
   return (
     <Router>
@@ -28,7 +33,10 @@ function App() {
           </Col>
           <Col xs={5}>
             <Switch>
-              <Route exact path="/" render={() => <Views.HomePage onTweetSubmit={handleTweetSubmit} />} />
+              <Route exact path="/" render={() => <Views.HomePage onTweetSubmit={handleTweetSubmit}
+                tweets={tweets}
+
+              />} />
               <Route exact path="/explore" component={Views.Explore} />
               <Route
                 exact
@@ -42,8 +50,8 @@ function App() {
                 path="/profile"
                 render={() => (
                   <Views.Profile
-                    tweets={tweets}
-                    onTweetSubmit={handleTweetSubmit}
+                    tweets={profileTweets}
+                    onTweetSubmit={handleProfileTweetSubmit}
                   />
                 )}
               />

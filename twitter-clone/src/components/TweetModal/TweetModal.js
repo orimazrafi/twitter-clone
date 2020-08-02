@@ -47,6 +47,7 @@ export const TweetModal = (props) => {
         tweet={tweet}
         tweetsArray={tweetsArray}
         height="200px"
+        pic="https://pbs.twimg.com/profile_images/1086330360852492295/PExQPH9a_bigger.jpg"
         header={<div className="close-btn-wrapper">
           {" "}
           <svg viewBox="0 0 24 24" onClick={onHide}>

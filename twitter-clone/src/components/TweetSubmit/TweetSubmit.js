@@ -1,6 +1,8 @@
 import { Container, Row, Col, Image, Button } from "react-bootstrap";
 import React from 'react'
 import style from "./style.module.scss"
+import { TweetOptionsIcons } from "../TweetOptionsIcons/TweetOptionsIcons";
+
 export const TweetSubmit = (props) =>
     <div style={{ border: props.border }}>
         {props.header}
@@ -13,6 +15,7 @@ export const TweetSubmit = (props) =>
                             tweet={props.tweetsArray[0].tweet}
                             marginBottom="10px"
                             minHeight={props.tweetsArray[0].tweet.length / 2 + 15 + "px"}
+                            pic={props.pic}
                         />
                     </>
                 )}
@@ -23,6 +26,7 @@ export const TweetSubmit = (props) =>
                     inputRef={props.inputRef}
                     height={props.height}
                     anotherTweet={props.anotherTweet}
+                    pic={props.pic}
                 />
             </Row>
             <Container>
@@ -40,7 +44,7 @@ export const TweetSubmit = (props) =>
             <Container>
                 <Row style={{ paddingBottom: "10px" }}>
                     <Col xs={1}></Col>
-                    <TweetOptions
+                    <TweetOptionsIcons
                         tweetModalIcons={props.tweetModalIcons}
                         onUpload={props.onUpload}
                     />
@@ -70,7 +74,7 @@ const UserImageAndInput = (props) => {
                 }}
             >
                 <Image
-                    src="https://pbs.twimg.com/profile_images/1086330360852492295/PExQPH9a_x96.jpg"
+                    src={props.pic}
                     roundedCircle
                     height="45"
                     width="45"
@@ -88,47 +92,6 @@ const UserImageAndInput = (props) => {
                     ref={props.inputRef}
                 />
             </Col>
-        </>
-    );
-};
-const TweetOptions = ({ tweetModalIcons, onUpload }) => {
-    const handleClick = (index) => {
-        switch (index) {
-            case 0:
-                return onUpload();
-            default:
-                break;
-        }
-    };
-    return (
-        <>
-            {tweetModalIcons?.map((icon, index) => (
-                <Col
-                    xs={icon.size}
-                    key={Math.random()}
-                    className={style.tweet_options_wrapper}
-                    onClick={() => handleClick(index)}
-                >
-                    <svg
-                        viewBox="0 0 24 24"
-                        style={{
-                            height: icon.height,
-                            fill: "rgba(29,161,242,1.00)",
-                        }}
-                    >
-                        <path d={icon.svgPath}></path>
-                        {icon.svgPath2 && <path d={icon.svgPath2}></path>}
-                        {icon.svgPath3 && <path d={icon.svgPath3}></path>}
-
-                        {icon.name === "smiley" && (
-                            <>
-                                <circle cx="14.738" cy="9.458" r="1.478"></circle>
-                                <circle cx="9.262" cy="9.458" r="1.478"></circle>
-                            </>
-                        )}
-                    </svg>
-                </Col>
-            ))}
         </>
     );
 };

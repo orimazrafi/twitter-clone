@@ -70,3 +70,21 @@
     cursor: pointer;
   }
 }
+
+.tweet_btn {
+  background-color: rgb(29, 161, 242);
+  border-radius: 25px !important;
+  color: white;
+  padding: 12px 50px;
+  margin-left: -15px;
+  margin-top: -10px;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgb(19, 117, 179);
+  }
+}
