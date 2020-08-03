@@ -5,6 +5,7 @@ import { tweetModalIcons } from "../../helpers";
 import { SvgIcon } from "../../components/SvgIcon/SvgIcon";
 import { Tweet } from './../Tweet/Tweet';
 import { TweetModal } from './../../components/TweetModal/TweetModal';
+import { CardWrpperWithWideBottomBorder } from "../../components/CardWrapperBorder/CardWrapperBorder";
 export const HomePage = ({ onTweetSubmit, tweets }) => {
   const [tweet, setTweet] = useState("");
   const [modalShow, setModalShow] = useState(false);
@@ -21,15 +22,13 @@ export const HomePage = ({ onTweetSubmit, tweets }) => {
   const tweetTheTweet = () => {
     onTweetSubmit(tweet);
   };
-  const CardWrpper = (props) =>
-    <div style={{ border: "1px solid lightgray", borderBottom: "unset", borderTop: "unset" }} >{props.children}</div>
 
   const WideCardBorder = (InnerComponent) => props =>
 
-    <CardWrpper props={props}>
+    <CardWrpperWithWideBottomBorder props={props}>
       <InnerComponent {...props} />
       <Container><Row style={{ borderBottom: "10px solid lightgray" }} /></Container>
-    </CardWrpper>
+    </CardWrpperWithWideBottomBorder>
   const TweetWithWrapper = WideCardBorder(TweetSubmit)
   return (<>
     <Row>
