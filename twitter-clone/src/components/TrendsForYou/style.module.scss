@@ -1,0 +1,10 @@
+.backgroundWrapper {
+    cursor: pointer;
+    width: 100%;
+
+    div.with_hover {
+        &:hover {
+            background-color: rgba(245, 248, 250, 0.3) !important;
+        }
+    }
+}
