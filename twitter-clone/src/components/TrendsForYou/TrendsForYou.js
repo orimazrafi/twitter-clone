@@ -49,13 +49,9 @@ export const TrendsForYou = (props) => <div>
         } />
     < EdgeOfMightLike
         borderRightAndLeft={props.borderRightAndLeft}
-
-        //  borderRadius="0 0 25px 25px "
-        borderRadius={props.borderRadius ? props.borderRadius : "25px 25px 0 0"}
-
+        borderRadius={props.borderRadius ? props.borderRadius : "0 0 25px 25px "}
         withHover="withHover"
         backgroundColor={props.backgroundColor}
-
         toRender={<Link to="/show-more" style={{ marginLeft: "20px", fontSize: "18px" }}> show more</Link >} />
 </div >
 const EdgeOfMightLike = (props) => <BackgroundWrapper

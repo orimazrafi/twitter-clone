@@ -229,3 +229,42 @@ export const youMightLike = [
   },
 
 ]
+export const whatIsHappeningArray = [
+  {
+    headline: "Weather",
+    when: "5 hours ago",
+    paragraph: "The Apple Fire in southern California has burned through 20,500+ acres",
+    pic: "https://pbs.twimg.com/amplify_video_thumb/1290129680448786432/img/Hmk79ewafmjstmPA?format=jpg&name=120x120"
+  },
+  {
+    headline: "Science",
+    when: "5 hours ago",
+    paragraph: "Scientists grow colored cotton, pivotal to sustainability in fashion",
+    pic: "https://pbs.twimg.com/media/EcdLfGfXkAAF4eO?format=jpg&name=240x240"
+  },
+  {
+    headline: "COVID-19",
+    when: "August 1, 2020",
+    paragraph: "A school reopened. It had to quarantine students within hours.",
+    pic: "https://pbs.twimg.com/media/EeWFTT3XYAMPpdo?format=jpg&name=240x240"
+  },
+  {
+    headline: "Sports",
+    when: "LIVE",
+    paragraph: "Happy birthday, Tom Brady",
+    paragraphPic: "https://abs-0.twimg.com/emoji/v2/svg/1f3c8.svg",
+    pic: "https://pbs.twimg.com/semantic_core_img/1276042937051168769/R7MTmAUW?format=jpg&name=240x240"
+  },
+  {
+    headline: "COVID-19",
+    when: "Yesterday",
+    paragraph: "Australia declares state of disaster in Victoria and imposes curfew in Melbourne",
+    pic: "https://pbs.twimg.com/semantic_core_img/1289851640296534016/kl4HlWHU?format=png&name=240x240"
+  },
+  {
+    headline: "Entertainment",
+    when: "August 1, 2020",
+    paragraph: "Adele shares photo supporting Beyoncé's Black is King",
+    pic: "https://pbs.twimg.com/semantic_core_img/1289643493237731330/I-QXGBq8?format=jpg&name=120x120"
+  },
+]
