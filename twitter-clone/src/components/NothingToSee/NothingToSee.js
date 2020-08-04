@@ -4,6 +4,7 @@ import { Container, Row, Col } from 'react-bootstrap'
 import { RoundButton } from '../RoundButton/RoundButton'
 export const NothingToSee = (props) => <CardBorder
     borderBottom="unset"
+    border={props.border}
     height={props.height}>
     <Container >
         <Row >

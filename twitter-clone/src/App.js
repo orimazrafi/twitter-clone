@@ -6,7 +6,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import Views from "./views";
 import { tweetsArray, otherUsersTweetsArray } from "./helpers";
 import { Trends } from './components/Trends/Trends';
-
+import { NothingToSee } from './components/NothingToSee/NothingToSee';
 function App() {
   const [profileTweets, setProfileTweets] = useState(tweetsArray);
   const [tweets, setTweets] = useState(otherUsersTweetsArray);
@@ -60,7 +60,22 @@ function App() {
           <Col xs={4}>
             <Container>
               <Row>
-                <Col xs={9}><Trends /></Col>
+                <Col xs={9}>
+                  <Route
+                    path="/"
+                    render={(props) =>
+                      props.location.pathname !== "/messages" ?
+                        <Trends />
+                        : <NothingToSee
+                          headline="You don’t have a message selected"
+                          subText="Choose one from your existing messages, or start a new one."
+                          button="New message"
+                          buttonPadding="10px 15px"
+                          border="unset"
+                        />
+                    }
+                  />
+                </Col>
               </Row>
             </Container>
           </Col>
