@@ -9,6 +9,8 @@ import { Switch } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 import { CardTwoSideBorder } from './../../components/CardTwoSideBorder/CardTwoSideBorder';
 import { AllNotifications } from './../../components/AllNotifications/AllNotifications';
+import { notifications } from "../../helpers";
+import { NothingToSee } from './../../components/NothingToSee/NothingToSee';
 export const Notifications = () => {
   const history = useHistory();
   const [activeTab, setActiveTab] = useState("notifications")
@@ -50,7 +52,10 @@ export const Notifications = () => {
       <Container fluid className={style.profile}>
         <Switch>
           <Route exact path="/notifications" render={() => <AllNotifications />} />
-          <Route path="/notifications/mentions" render={() => <div>Mentios</div>} />
+          <Route path="/notifications/mentions" render={() =>
+            notifications.sort(notification =>
+              notification.userName === "ori mazrafi") > 0 ?
+              <AllNotifications /> : <NothingToSee height="90vh" />} />
         </Switch>
       </Container>
       <Container>

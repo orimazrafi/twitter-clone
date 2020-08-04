@@ -14,7 +14,6 @@ export const AllNotifications = (props) => {
                 key={Math.random()}
                 padding="10px 0 0  0"
                 borderTop="unset"
-
             >
                 <Container>
                     <Row>
@@ -53,7 +52,7 @@ export const AllNotifications = (props) => {
                         </Col>
                     </Row>
                     <Row>
-                        <Col style={{ textAlign: "end", paddingRight: "32px", color: "gray", fontWeight: "400", paddingBottom: "5px" }}>
+                        <Col style={{ textAlign: "end", padding: "0 32px 10px 80px", color: "gray", fontWeight: "400" }}>
                             {notification.subText}</Col>
                     </Row>
                 </Container>
