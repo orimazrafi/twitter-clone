@@ -1,0 +1,29 @@
+.link_wrapper {
+    text-align: center;
+    padding: 15px 0 !important;
+
+    &:hover {
+        background: rgba(29, 161, 242, 0.1);
+        cursor: pointer;
+    }
+
+    div.link {
+        color: gray;
+        text-decoration: none;
+
+
+    }
+
+    div.active_link {
+        text-decoration: none;
+        color: rgb(29, 161, 242);
+
+        &+hr {
+            margin-bottom: -15px;
+            border-bottom: 3px solid rgb(29, 161, 242);
+            ;
+        }
+    }
+
+
+}

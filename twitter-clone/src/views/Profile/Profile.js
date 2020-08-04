@@ -7,10 +7,10 @@ import { Route, useHistory } from "react-router-dom";
 import { Tweet } from './../Tweet/Tweet';
 import { Media } from './../Media/Media';
 import Switch from "react-bootstrap/esm/Switch";
+import { TabItem } from './../../components/TabItem/TabItem';
 
 export const Profile = ({ tweets, onTweetSubmit }) => {
   const history = useHistory();
-
   const [activeTab, setActiveTab] = useState("profile")
   useEffect(() => {
     history.push("/" + activeTab)
@@ -87,12 +87,7 @@ export const Profile = ({ tweets, onTweetSubmit }) => {
   );
 };
 
-const TabItem = (props) => <Col xs={props.size} className={style.link_wrapper} style={{ textAlign: "center", padding: "15px" }} onClick={() => props.handleActiveTab(props.tabName)}>
-  <div className={props.activeTab === props.tabName ? style.active_link : style.link} >{props.tabText}</div>
-  {props.activeTab === props.tabName &&
-    <hr />
-  }
-</Col>
+
 
 const UserCard = ({ tweets }) => <Container className={style.user_card}>
   <Row className={style.inner_wrapper} >

@@ -1,0 +1,16 @@
+.profile {
+    .card {
+        border: 1px solid rgb(230, 236, 240);
+        padding: 7px 0;
+
+        &:hover {
+            cursor: pointer;
+            background: rgba(189, 215, 231, 0.1);
+        }
+    }
+}
+
+.tabs_generic {
+    font-size: 15px;
+    font-weight: bold;
+}

@@ -39,7 +39,6 @@ function App() {
               />} />
               <Route exact path="/explore" component={Views.Explore} />
               <Route
-                exact
                 path="/notifications"
                 component={Views.Notifications}
               />

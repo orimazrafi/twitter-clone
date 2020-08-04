@@ -268,3 +268,30 @@ export const whatIsHappeningArray = [
     pic: "https://pbs.twimg.com/semantic_core_img/1289643493237731330/I-QXGBq8?format=jpg&name=120x120"
   },
 ]
+export const notifications = [
+  {
+    pic: "https://pbs.twimg.com/profile_images/638710876023840769/YF855T_W_normal.jpg",
+    userName: "שלי יחימוביץ",
+    headline: "In case you missed שלי יחימוביץ's Tweet",
+    subText: "זה חשבון הטוויטר האהוב עלי. תכלס"
+  },
+  {
+    pic: "https://pbs.twimg.com/profile_images/638710876023840769/YF855T_W_normal.jpg",
+    userName: "שלי יחימוביץ",
+    headline: "שלי יחימוביץ liked a Tweet from TheMarker",
+    subText: "@Syechimovich   ויגאל גואטה עקפו את ברדוגו: @kann  רשת ב' מובילה לראשונה על  @GLZRadio  themarker.com/advertising/1."
+  },
+  {
+    pic: "https://pbs.twimg.com/profile_images/3244876900/690459bd36e1e21113c7ea635376f8c7_normal.png",
+    userName: "Stav Shaffir ",
+    headline: "In case you missed Stav Shaffir 's Tweet",
+    subText: `תראו מה קורה כש"איזו בחורה" לא עוצרת ברמזורים האדומים https://theguardian.com/world/2020/jul`
+  },
+  {
+    pic: "https://pbs.twimg.com/profile_images/605437191460782080/tXyq94qF_normal.jpg",
+    userName: "ליאור שליין ",
+    headline: "In case you missed ליאור שליין 's Tweet",
+    subText: `ההגבלות החדשות עליהן החליטו ביבי, גנץ ו-33 השרים העלובים שלהם הן למעשה סגר בשבת, ובשאר הימים מ-17:00. "ממשלת החירום לטיפול בקורונה" נכשלה באופן מחפיר, ובמקום ללכת הביתה - היא שולחת אותנו הביתה.`
+  },
+
+]
