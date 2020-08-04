@@ -7,7 +7,7 @@ export const TweetSearchInput = (props) =>
         }
         /> <svg viewBox="0 0 24 24" style={
             {
-                height: "20px", position: "absolute", top: props.top, left: "28px", fill: "currentColor"
+                height: "20px", position: "absolute", top: props.top, left: props.left ? props.left : "28px", fill: "currentColor"
             }
         }
 

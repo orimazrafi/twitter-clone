@@ -55,7 +55,10 @@ export const Notifications = () => {
           <Route path="/notifications/mentions" render={() =>
             notifications.sort(notification =>
               notification.userName === "ori mazrafi") > 0 ?
-              <AllNotifications /> : <NothingToSee height="90vh" />} />
+              <AllNotifications /> : <NothingToSee height="90vh"
+                headline="Nothing to see here — yet"
+                subText="When someone mentions you, you’ll find it here."
+              />} />
         </Switch>
       </Container>
       <Container>

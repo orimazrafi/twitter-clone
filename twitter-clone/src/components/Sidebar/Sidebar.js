@@ -5,6 +5,7 @@ import style from "./style.module.scss";
 import { sidebarList } from "../../helpers";
 import { TweetModal } from "../TweetModal/TweetModal";
 import { ImageAndEmail } from "../ImageAndEmail/ImageAndEmail";
+import { RoundButton } from "../RoundButton/RoundButton";
 
 const LinkHover = (props) => (
   <Col
@@ -92,9 +93,10 @@ export const Sidebar = ({ onTweetSubmit }) => {
         </Row>
         <Row>
           <Col>
-            <div className={style.tweet_btn} onClick={() => setModalShow(true)}>
-              Tweet
-            </div>
+            <RoundButton
+              onModalShow={() => setModalShow(true)}
+              label="Tweet"
+            />
           </Col>
         </Row>
       </Container>
