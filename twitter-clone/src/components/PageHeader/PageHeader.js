@@ -6,11 +6,15 @@ import { SvgIcon } from '../SvgIcon/SvgIcon';
 export const PageHeader = props => <Container>
     <Row style={{
         justifyContent: "space-between",
-        padding: "10px 15px 0 10px "
+        padding: props.padding ? props.padding : "10px 15px 10px 10px "
     }}>
-        <h4 style={{ fontWeight: "bold" }}> {props.headline} </h4 >
+        {props.anotherSvg}
+        <h4 style={{ fontWeight: "bold", margin: props.margin ? props.margin : "unset" }}> {props.headline} </h4>
+        {props.nextSvg}
+
         <div>
             <SvgIcon
+                {...props}
                 height={props.height}
                 fill={props.fill}
                 path={
@@ -23,4 +27,5 @@ export const PageHeader = props => <Container>
             />
         </div>
     </Row>
+    {props.subText}
 </Container>
