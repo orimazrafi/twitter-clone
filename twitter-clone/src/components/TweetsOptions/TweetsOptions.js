@@ -74,7 +74,8 @@ export const TweetsOptions = (props) => {
             {index === 3 && (
               <DropDownRefresh
                 icon={icon}
-                firstRow={<DropdownItem icon={{ height: "30px", svgPath: envelopeIcon }} text={"Send via Direct Message"} />}
+                firstRow={
+                  <DropdownItem icon={{ height: "30px", svgPath: envelopeIcon }} text={"Send via Direct Message"} />}
                 secondRow={
                   <DropdownItem
                     icon={{

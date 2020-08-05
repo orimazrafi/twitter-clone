@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const DropdownItem = ({ icon, text }) => (
+export const DropdownItem = ({ icon, text, textLeftMargin }) => (
     <WithHoverEffect icon={icon}>
         {" "}
         <svg
@@ -14,8 +14,11 @@ export const DropdownItem = ({ icon, text }) => (
             {icon.svgPath2 &&
                 <path d={icon.svgPath2}></path>
             }
+            {icon.svgPath3 &&
+                <path style={{ fill: "blue" }} d={icon.svgPath3}></path>
+            }
         </svg>
-        <span>{text}</span>
+        <span style={{ marginLeft: textLeftMargin }}>{text}</span>
     </WithHoverEffect>
 );
 const WithHoverEffect = (props) => (

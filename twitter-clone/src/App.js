@@ -54,7 +54,7 @@ function App() {
                   />
                 )}
               />
-              <Route exact path="/more" component={Views.More} />
+              {/* <Route exact path="/more" component={Views.More} /> */}
             </Switch>
           </Col>
           <Col xs={4}>

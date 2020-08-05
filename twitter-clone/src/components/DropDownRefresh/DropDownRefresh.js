@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { NavDropdown } from 'react-bootstrap';
-export const DropDownRefresh = ({ icon, firstRow, secondRow, thirdRow, fourthRow }) => (
+export const DropDownRefresh = ({ icon, iconText, firstRow, secondRow, thirdRow, fourthRow, fifthRow, sixthRow, seventhRow }) => (
     <NavDropdown
         style={{
             marginLeft: icon.marginLeft,
@@ -9,7 +9,7 @@ export const DropDownRefresh = ({ icon, firstRow, secondRow, thirdRow, fourthRow
             display: icon.display
         }}
         className={"sidebar-users-dropdown"}
-        title={
+        title={<>
             <svg
                 viewBox="0 0 24 24"
                 style={{
@@ -20,12 +20,16 @@ export const DropDownRefresh = ({ icon, firstRow, secondRow, thirdRow, fourthRow
                 <path d={icon.svgPath}></path>
                 {icon.svgPath2 && <path d={icon.svgPath2}></path>}
             </svg>
+            {iconText}
+        </>
         }
-        id="basic-nav-dropdown"
     >
         {firstRow}
         {secondRow}
         {thirdRow}
         {fourthRow}
+        {fifthRow}
+        {sixthRow}
+        {seventhRow}
     </NavDropdown>
 );
